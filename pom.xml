@@ -36,6 +36,7 @@
     <modules>
         <module>demo-discovery-eureka</module>
         <module>demo-provider-user</module>
+        <module>demo-consumer-movie-ribbon</module>
         <!--<module>demo-provider-user</module>
         <module>demo-consumer-movie-ribbon</module>
         <module>demo-consumer-movie-feign</module>

@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="demo-consumer-movie-ribbon" />
         <module name="demo-discovery-eureka" />
         <module name="demo-provide-ruser" />
       </profile>
