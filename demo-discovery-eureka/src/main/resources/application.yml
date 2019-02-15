@@ -2,7 +2,7 @@ server:
   port: 8761 # 指定该Eureka实例的端口
 eureka:
   instance:
-      hostname: 192.168.230.129 # 指定该Eureka实例的主机名
+      hostname: localhost # 指定该Eureka实例的主机名
   client:
     register-with-eureka: false
     fetch-registry: false
