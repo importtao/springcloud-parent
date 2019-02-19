@@ -34,25 +34,12 @@
         </dependencies>
     </dependencyManagement>
     <modules>
-        <module>demo-discovery-eureka</module>
+        <!--<module>demo-discovery-eureka</module>-->
         <module>eureka-server</module>
         <module>demo-provider-user</module>
         <module>demo-consumer-movie-ribbon</module>
-        <!--<module>demo-provider-user</module>
-        <module>demo-consumer-movie-ribbon</module>-->
-        <!--<module>demo-provider-user</module>
-        <module>demo-consumer-movie-ribbon</module>
         <module>demo-consumer-movie-feign</module>
-        <module>demo-consumer-movie-ribbon-with-hystrix</module>
-        <module>demo-consumer-movie-feign-with-hystrix</module>
-        <module>demo-hystrix-dashboard</module>
-        <module>demo-consumer-movie-feign-with-hystrix-stream</module>
-        <module>demo-hystrix-turbine</module>
-        <module>demo-config-server</module>
-        <module>demo-config-client</module>
-        <module>demo-config-server-eureka</module>
-        <module>demo-config-client-eureka</module>
-        <module>demo-api-gateway</module>-->
+        <module>microservice-consumer-movie-ribbon-with-hystrix</module>
     </modules>
     <build>
         <plugins>

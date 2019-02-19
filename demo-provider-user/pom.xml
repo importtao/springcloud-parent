@@ -40,6 +40,7 @@
             <scope>provided</scope>
         </dependency>
 
+
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
@@ -76,16 +77,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka-server</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka</artifactId>
-        </dependency>
-
     </dependencies>
 
     <build>
@@ -99,9 +90,18 @@
             <resource>
                 <directory>src/main/java</directory>
                 <includes>
+                    <include>**/*.yml</include>
                     <include>**/*.properties</include>
                     <include>**/*.xml</include>
-                    <include>**/*.tld</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.yml</include>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
                 </includes>
                 <filtering>false</filtering>
             </resource>

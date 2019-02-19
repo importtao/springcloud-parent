@@ -1,15 +1,15 @@
 #此为spsringboot的主配置文件
 #指定dev的环境，这样springboot启动时候会自动选择dev环境，自动加载application-dev.yml,如果要用其他环境，这里可以修改，比如上测试环境的话，可以换成test
 server:
-  port: 8000
+  port: 8001
 spring:
   application:
     name: demo-provider-user # 项目名称尽量用小写
   datasource:
-    url: jdbc:mysql://192.168.230.129:3306/zttest
+    url: jdbc:mysql://192.168.230.129:3306/zttest?useSSL=false&serverTimezone=UTC
     username: root
     password: root
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     platform: mysql
     maxPoolSize: 5
     idleTimeout: 6000
