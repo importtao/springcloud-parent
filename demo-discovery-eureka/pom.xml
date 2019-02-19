@@ -29,7 +29,6 @@
                 <directory>src/main/java</directory>
                 <includes>
                     <include>**/*.properties</include>
-                    <include>**/*.yml</include>
                     <include>**/*.xml</include>
                     <include>**/*.tld</include>
                     <include>**/*</include>
