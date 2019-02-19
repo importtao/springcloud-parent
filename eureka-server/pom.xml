@@ -16,5 +16,51 @@
         <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
     </dependency>
 </dependencies>
+    <build>
+    <resources>
+        <resource>
+            <directory>src/main</directory>
+            <includes>
+                <include>**/*</include>
+            </includes>
+            <filtering>false</filtering>
+        </resource>
+        <resource>
+            <directory>src/main/java</directory>
+            <includes>
+                <include>**/*.properties</include>
+                <include>**/*.xml</include>
+                <include>**/*.tld</include>
+                <include>**/*</include>
+            </includes>
+            <filtering>false</filtering>
+        </resource>
 
+    </resources>
+    <plugins>
+        <!-- docker的maven插件，官网：https://github.com/spoti
+fy/docker-maven-plugin -->
+        <plugin>
+            <groupId>com.spotify</groupId>
+            <artifactId>docker-maven-plugin</artifactId>
+            <version>1.0.0</version>
+            <configuration>
+                <!-- 注意imageName一定要是符合正则[a-z0-9-_.]的
+                ，否则构建不会成功 -->
+                <!-- 详见：https://github.com/spotify/dockermaven-plugin Invalid repository name ... only [a-z0-9-_.] are
+                allowed-->
+                <imageName>eurekadockerfile</imageName>
+                <!-- 指定Dockerfile所在的路径 -->
+                <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
+                <resources>
+                    <resource>
+                        <targetPath>/</targetPath>
+                        <directory>${project.build.directory}</directory>
+                        <include>${project.build.finalName}.jar</include>
+                    </resource>
+                </resources>
+            </configuration>
+        </plugin>
+    </plugins>
+    </build>
 </project>
