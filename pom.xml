@@ -40,6 +40,7 @@
         <module>demo-consumer-movie-ribbon</module>
         <module>demo-consumer-movie-feign</module>
         <module>microservice-consumer-movie-ribbon-with-hystrix</module>
+        <module>demo-config</module>
     </modules>
     <build>
         <plugins>
