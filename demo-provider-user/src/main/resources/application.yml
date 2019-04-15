@@ -6,7 +6,7 @@ spring:
   application:
     name: demo-provider-user # 项目名称尽量用小写
   datasource:
-    url: jdbc:mysql://192.168.230.129:3306/zttest?useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/test?useSSL=false&serverTimezone=UTC
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -14,6 +14,18 @@ spring:
     maxPoolSize: 5
     idleTimeout: 6000
     connectionTimeout: 50000
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+    timeout: 100000
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        max-wait: 1000
+        min-idle: 1
+      shutdown-timeout: 100
 mybatis-plus:
   # 如果是放在src/main/java目录下 classpath:/com/yourpackage/*/mapper/*Mapper.xml
   # 如果是放在resource目录 classpath:/mapper/*Mapper.xml
