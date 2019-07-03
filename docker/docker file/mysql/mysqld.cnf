@@ -6,8 +6,8 @@
 #
 [client]
 #password = [your_password]
-port = @MYSQL_TCP_PORT@
-socket = @MYSQL_UNIX_ADDR@
+port = 3306
+#socket = @MYSQL_UNIX_ADDR@
 
 # *** 应用定制选项 ***
 
@@ -23,8 +23,8 @@ character-set-server = utf8mb4
 collation-server = utf8mb4_unicode_ci
 
 # 一般配置选项
-port = @MYSQL_TCP_PORT@
-socket = @MYSQL_UNIX_ADDR@
+port = 3306
+#socket = @MYSQL_UNIX_ADDR@
 
 # back_log 是操作系统在监听队列中所能保持的连接数,
 # 队列保存了在MySQL连接管理器线程处理之前的连接.
