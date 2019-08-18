@@ -1,14 +1,16 @@
 package me.importtao.user.controller;
 
+import com.netflix.discovery.converters.Auto;
 import lombok.extern.slf4j.Slf4j;
 import me.importtao.user.anotation.DistributeLock;
+import me.importtao.user.anotation.DistributeLockKey;
 import me.importtao.user.config.RedisLock;
-import me.importtao.user.dao.TestMapper;
+import me.importtao.user.dao.PlanetOperateLogMapper;
+import me.importtao.user.model.PlanetOperateLog;
+import me.importtao.user.model.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.concurrent.TimeUnit;
 
@@ -20,7 +22,8 @@ public class TestController {
     @Autowired
     private RedisLock redisLock;
     @Autowired
-    private TestMapper testMapper;
+    private PlanetOperateLogMapper planetOperateLogMapper;
+
     /**
      * 注：@GetMapping("/{id}")是spring 4.3的新注解等价于：
      * @RequestMapping(value = "/id", method = RequestMethod.GET)
@@ -45,10 +48,12 @@ public class TestController {
     }
 
     @DistributeLock(key = "testNoLock")
-    @GetMapping("/testNoLock/{id}")
-    public String testNoLock(@PathVariable Long id) throws InterruptedException{
+    @DistributeLockKey(params ={"id","test.name1"})
+    @PostMapping("/testNoLock/{id}")
+    public String testNoLock(@PathVariable Long id, @RequestBody Test test) throws InterruptedException{
+        log.info("testNoLock id:{}开始执行任务",id);
         Thread.sleep(1000);
-        log.info("id:{}获取锁成功，执行任务",id);
+        log.info("testNoLock id:{}任务执行完成",id);
         return "hello";
     }
     /**
@@ -58,6 +63,9 @@ public class TestController {
     @GetMapping("/instance-info")
     public String showInfo() {
         //ServiceInstance localServiceInstance = this.discoveryClient.getLocalServiceInstance();
+        PlanetOperateLog planetOperateLog = new PlanetOperateLog();
+        Wra
+        planetOperateLogMapper.selectList(planetOperateLog);
         return this.discoveryClient.description();
     }
 }

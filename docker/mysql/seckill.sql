@@ -1,6 +1,6 @@
 #创建数据库
-#DROP database IF EXISTS seckill;
-#CREATE database seckill;
+DROP database IF EXISTS seckill;
+CREATE database seckill;
 #使用数据库
 use seckill;
 #创建用户表

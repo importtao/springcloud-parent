@@ -6,14 +6,15 @@ spring:
   application:
     name: demo-provider-user # 项目名称尽量用小写
   datasource:
-    url: jdbc:mysql://localhost:3306/test?useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://47.110.244.88:3307/planet_dev?useUnicode=true&autoReconnect=true&rewriteBatchedStatements=TRUE&allowMultiQueries=true
     username: root
-    password: root
+    password: planet++520
     driver-class-name: com.mysql.cj.jdbc.Driver
     platform: mysql
     maxPoolSize: 5
     idleTimeout: 6000
     connectionTimeout: 50000
+
   redis:
     host: localhost
     port: 6379

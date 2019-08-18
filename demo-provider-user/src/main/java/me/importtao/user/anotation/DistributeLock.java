@@ -1,9 +1,7 @@
 package me.importtao.user.anotation;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+
+import java.lang.annotation.*;
 
 /**
  * @program spring-cloud-parent
@@ -11,8 +9,9 @@ import java.lang.annotation.Target;
  * @author: changhu
  * @create: 2019/04/15 20:46
  */
-@Target(ElementType.METHOD)
+@Target({ElementType.METHOD,ElementType.ANNOTATION_TYPE})
 @Retention(RetentionPolicy.RUNTIME)
+@Inherited
 public @interface DistributeLock {
     String key();
 

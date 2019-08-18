@@ -1,0 +1,14 @@
+#此为spsringboot的主配置文件
+#指定dev的环境，这样springboot启动时候会自动选择dev环境，自动加载application-dev.yml,如果要用其他环境，这里可以修改，比如上测试环境的话，可以换成test
+server:
+  port: 8002
+spring:
+  application:
+    name: demo-provider-user # 项目名称尽量用小写
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/ # 指定注册中心的地址
+  instance:
+    preferIpAddress: true

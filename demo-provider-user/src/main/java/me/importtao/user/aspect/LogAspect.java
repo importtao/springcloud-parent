@@ -2,6 +2,7 @@ package me.importtao.user.aspect;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
@@ -31,6 +32,8 @@ public class LogAspect {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
 
+
+
         // 记录下请求内容
         log.info("URL : " + request.getRequestURL().toString());
         log.info("HTTP_METHOD : " + request.getMethod());
@@ -39,6 +42,11 @@ public class LogAspect {
         log.info("ARGS : " + Arrays.toString(joinPoint.getArgs()));
         startTime.set(System.currentTimeMillis());
 
+    }
+    @Around("webLog()")
+    public Object around(ProceedingJoinPoint joinPoin){
+        joinPoin.getSignature();
+        return null;
     }
 
     @AfterThrowing("webLog()")

@@ -56,9 +56,8 @@ public class RedisLock {
      */
     public boolean tryLock(String lockKey, String requestId, long expire, TimeUnit timeUnit) {
         try{
-            RedisCallback<Boolean> callback = (connection) -> {
-                return connection.set(lockKey.getBytes(Charset.forName("UTF-8")), requestId.getBytes(Charset.forName("UTF-8")), Expiration.seconds(timeUnit.toSeconds(expire)), RedisStringCommands.SetOption.SET_IF_ABSENT);
-            };
+            RedisCallback<Boolean> callback = (connection) ->
+                connection.set(lockKey.getBytes(Charset.forName("UTF-8")), requestId.getBytes(Charset.forName("UTF-8")), Expiration.seconds(timeUnit.toSeconds(expire)), RedisStringCommands.SetOption.SET_IF_ABSENT);
             return (Boolean)redisTemplate.execute(callback);
         } catch (Exception e) {
             log.error("redis lock error.", e);
