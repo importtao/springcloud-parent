@@ -1,4 +1,4 @@
-package me.importtao.user;
+package me.importtao.user.enums;
 
 /**
  * @program spring-cloud-parent
