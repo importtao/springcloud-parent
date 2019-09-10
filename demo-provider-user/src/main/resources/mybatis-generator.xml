@@ -178,9 +178,7 @@
             15，delimitAllColumns：设置是否所有生成的SQL中的列名都使用标识符引起来。默认为false，delimitIdentifiers参考context的属性
             注意，table里面很多参数都是对javaModelGenerator，context等元素的默认属性的一个复写；
          -->
-        <table schema="planet_dev" tableName="planet_teacher_missed_lesson_time_bucket" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" selectByExampleQueryId="false" />
-        <table schema="planet_dev" tableName="planet_missed_lesson_reply" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        <table schema="planet_dev" tableName="planet_show_boost" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" selectByExampleQueryId="false" />
 
             <!-- 参考 javaModelGenerator 的 constructorBased属性-->

@@ -1,6 +1,7 @@
 package me.importtao.user.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import me.importtao.user.anotation.BusinessLog;
 import me.importtao.user.enums.BusinessLogTypeEnum;
 import me.importtao.user.anotation.DistributeLock;
 import me.importtao.user.anotation.DistributeLockKey;
@@ -33,11 +34,14 @@ public class TestController implements BusinessLogAbstract {
      * 类似的注解还有@PostMapping等等
      */
     @GetMapping("/{id}")
-    @me.importtao.user.anotation.BusinessLog(key="test",valueKey = "valueKey",type= BusinessLogTypeEnum.USER)
+    @BusinessLog(key="test",description = "测试日志",type= BusinessLogTypeEnum.USER)
     public String findById(@PathVariable Long id) throws InterruptedException {
         mSet(LogKeyEnum.OLD_VALUE,id);
         mSet(LogKeyEnum.NEW_VALUE,id);
-        while (true) {
+        mSet(LogKeyEnum.CHANGED_ID,id);
+        mSet(LogKeyEnum.RESULT,"success");
+        mSet(LogKeyEnum.OPERATOR_USER_ID,"123");
+        /*while (true) {
             if (redisLock.tryLock("findById", "1", 3000, TimeUnit.MILLISECONDS)) {
                 log.info("id:{}获取锁成功，执行任务", id);
                 Thread.sleep(1000);
@@ -47,7 +51,7 @@ public class TestController implements BusinessLogAbstract {
             } else {
                 Thread.sleep(1000);
             }
-        }
+        }*/
         return "hello";
     }
 

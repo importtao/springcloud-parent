@@ -16,5 +16,5 @@ import java.lang.annotation.*;
 public @interface BusinessLog {
     String key();
     BusinessLogTypeEnum type() default BusinessLogTypeEnum.USER;
-    String valueKey ();
+    String description ();
 }
