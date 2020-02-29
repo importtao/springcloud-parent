@@ -178,8 +178,31 @@
             15，delimitAllColumns：设置是否所有生成的SQL中的列名都使用标识符引起来。默认为false，delimitIdentifiers参考context的属性
             注意，table里面很多参数都是对javaModelGenerator，context等元素的默认属性的一个复写；
          -->
-        <table schema="planet_dev" tableName="planet_show_boost" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        <table schema="planet_dev" tableName="planet_kid_hour_audit_data" enableInsert="true" enableUpdateByPrimaryKey="true"
+               enableSelectByPrimaryKey="true"  />
+        <table schema="planet_dev" tableName="planet_kid_hour_audit" enableInsert="true" enableUpdateByPrimaryKey="true"
+               enableSelectByPrimaryKey="true"  />
+
+        <table schema="planet_dev" tableName="planet_kid_hour_package_item" enableInsert="true" enableUpdateByPrimaryKey="true"
+               enableSelectByPrimaryKey="true" />
+        <table schema="planet_dev" tableName="planet_kid_hour_package" enableInsert="true" enableUpdateByPrimaryKey="true"
+               enableSelectByPrimaryKey="true" />
+        <table schema="planet_dev" tableName="planet_sign_contract_activity_item" enableInsert="true" enableUpdateByPrimaryKey="true"
+               enableSelectByPrimaryKey="true" />
+
+
+        <table schema="planet_dev" tableName="planet_sign_contract_activity" enableInsert="true" enableUpdateByPrimaryKey="true"
+               enableSelectByPrimaryKey="true" />
+
+        <table schema="planet_dev" tableName="planet_sign_contract_activity_gifts" enableInsert="true" enableUpdateByPrimaryKey="true"
+               enableSelectByPrimaryKey="true" />
+<!--
+<table schema="planet_dev" tableName="planet_ptp_invitation_answer" enableInsert="true" enableUpdateByPrimaryKey="true"
+               enableSelectByPrimaryKey="true" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" selectByExampleQueryId="false" />
+-->
+
+
 
             <!-- 参考 javaModelGenerator 的 constructorBased属性-->
             <!--<property name="constructorBased" value="false"/>-->

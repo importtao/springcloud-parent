@@ -6,11 +6,11 @@ spring:
   application:
     name: demo-provider-user # 项目名称尽量用小写
   datasource:
-    #url: jdbc:mysql://47.110.244.88:3307/planet_dev?useUnicode=true&autoReconnect=true&rewriteBatchedStatements=TRUE&allowMultiQueries=true
-    url: jdbc:mysql://127.0.0.1/seckill?useUnicode=true&autoReconnect=true&rewriteBatchedStatements=TRUE&allowMultiQueries=true
+    url: jdbc:mysql://47.110.244.88:3307/planet_dev?useUnicode=true&autoReconnect=true&rewriteBatchedStatements=TRUE&allowMultiQueries=true
+    #url: jdbc:mysql://127.0.0.1/seckill?useUnicode=true&autoReconnect=true&rewriteBatchedStatements=TRUE&allowMultiQueries=true
     username: root
-    #password: planet++520
-    password: root
+    password: planet++520
+    #password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
     platform: mysql
     maxPoolSize: 5
@@ -18,9 +18,9 @@ spring:
     connectionTimeout: 50000
 
   redis:
-    host: 127.0.0.1
+    host: 121.40.249.236
     port: 6379
-    database: 0
+    database: 5
     timeout: 100000
     lettuce:
       pool:
@@ -29,6 +29,17 @@ spring:
         max-wait: 1000
         min-idle: 1
       shutdown-timeout: 100
+    password: wanwugs!cl
+
+  data:
+    elasticsearch:
+      repositories:
+        enabled: true
+      cluster-name: docker-cluster
+      cluster-nodes: 47.97.24.111:9300
+      rest:
+        uris: ["http://47.97.24.111:9300"]
+
 # 这里包括含了dev环境下的其他配置文件，比如我们这里还有个application-dev_redis.xml文件配置的是dev环境的redis配置，则
 eureka:
   client:
@@ -36,3 +47,10 @@ eureka:
       defaultZone: http://localhost:8761/eureka/ # 指定注册中心的地址
   instance:
     preferIpAddress: true
+log:
+  name: importtao
+
+es:
+  host: 47.97.24.111
+  port: 9200
+  schema: http

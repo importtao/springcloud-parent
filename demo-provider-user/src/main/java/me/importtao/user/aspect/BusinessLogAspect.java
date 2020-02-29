@@ -1,3 +1,4 @@
+/*
 package me.importtao.user.aspect;
 
 import com.alibaba.fastjson.JSON;
@@ -5,14 +6,10 @@ import lombok.extern.slf4j.Slf4j;
 import me.importtao.user.anotation.BusinessLog;
 import me.importtao.user.common.BusinessLogAbstract;
 import me.importtao.user.config.RedisLock;
-import me.importtao.user.dao.PlanetSysOperationLogMapper;
 import me.importtao.user.enums.BusinessLogTypeEnum;
 import me.importtao.user.enums.LogKeyEnum;
-import me.importtao.user.model.PlanetSysOperationLog;
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
@@ -23,12 +20,14 @@ import java.lang.reflect.Method;
 import java.util.Date;
 import java.util.Optional;
 
+*/
 /**
  * @program spring-cloud-parent
  * @description: 业务日志切面
  * @author: changhu
  * @create: 2019/08/17 18:28
- */
+ *//*
+
 @Slf4j
 @Aspect
 @Component
@@ -45,22 +44,26 @@ public class BusinessLogAspect {
 
     @After("tartMethod()")
     public void doHandler(JoinPoint joinPoint) throws Throwable{
-        /*try {
+        */
+/*try {
             proceedingJoinPoint.proceed();
         } catch (Throwable throwable) {
             throw throwable;
-        }*/
+        }*//*
+
         Object targetObject = joinPoint.getTarget();
         if(targetObject instanceof BusinessLogAbstract){
             MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
             Method method = methodSignature.getMethod();
             Optional<BusinessLog> businessLogOptional = Optional.ofNullable(method.getAnnotation(BusinessLog.class));
             if(!businessLogOptional.isPresent()){
-                /*try {
+                */
+/*try {
                     return proceedingJoinPoint.proceed();
                 } catch (Throwable throwable) {
                     throw throwable;
-                }*/
+                }*//*
+
                 return;
             }
             BusinessLog businessLog = businessLogOptional.get();
@@ -95,7 +98,8 @@ public class BusinessLogAspect {
         }else{
             log.error("不是实现类 do nothing");
         }
-        /*try {
+        */
+/*try {
             Optional<Field> fieldOptional = Optional.ofNullable(targetObject.getClass().getDeclaredField("threadLocal"));
             fieldOptional.ifPresent(field -> {
                 try {
@@ -106,10 +110,12 @@ public class BusinessLogAspect {
             });
         } catch (NoSuchFieldException e) {
             e.printStackTrace();
-        }*/
+        }*//*
+
 
 
         return;
 
     }
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package me.importtao.user.config;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
@@ -19,4 +20,4 @@ public class MetaObjectHandlerConfig implements MetaObjectHandler {
     public void updateFill(MetaObject metaObject) {
         System.out.println("更新方法实体填充");
     }
-}
+}*/

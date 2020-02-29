@@ -1,3 +1,4 @@
+/*
 package me.importtao.user.config;
 
 import com.baomidou.mybatisplus.core.injector.ISqlInjector;
@@ -24,17 +25,20 @@ import java.util.Set;
 @Configuration
 @MapperScan("me.importtao.user.dao")
 public class MybatisPlusConfig {
-    /*
+    */
+/*
      * 分页插件，自动识别数据库类型
      * 多租户，请参考官网【插件扩展】
-     */
+     *//*
+
     @Bean
     public PaginationInterceptor paginationInterceptor() {
         return new PaginationInterceptor();
     }
 
 
-   /*
+   */
+/*
     * oracle数据库配置JdbcTypeForNull
     * 参考：https://gitee.com/baomidou/mybatisplus-boot-starter/issues/IHS8X
     不需要这样配置了，参考 yml:
@@ -53,10 +57,13 @@ public class MybatisPlusConfig {
            configuration.setJdbcTypeForNull(JdbcType.NULL);
        }
    }
-   */
-    /**
+   *//*
+
+    */
+/**
      * 性能分析拦截器，不建议生产使用
-     */
+     *//*
+
     @Bean
     public PerformanceInterceptor performanceInterceptor(){
         return new PerformanceInterceptor();
@@ -71,9 +78,11 @@ public class MybatisPlusConfig {
         return bean.getObject();
     }
 
-    /**
+    */
+/**
      *  将String 转成 ISqlInjector 实例
-     */
+     *//*
+
     public class String2SqlInjectorConverter implements Converter<String, ISqlInjector> {
         @Override
         public ISqlInjector convert(String s) {
@@ -91,4 +100,4 @@ public class MybatisPlusConfig {
             return null;
         }
     }
-}
+}*/
